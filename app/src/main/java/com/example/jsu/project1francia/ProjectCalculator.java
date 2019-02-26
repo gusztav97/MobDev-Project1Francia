@@ -9,9 +9,22 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class ProjectCalculator extends AppCompatActivity implements View.OnClickListener{
+
+    double buffer;
+    double numberConvert;
+    double previousCompute;
+    double result;
+    boolean additionFlag;
+    boolean subtractionFlag;
+    boolean divisionFlag;
+    boolean multiplicationFlag;
+    boolean percentFlag;
+    double percentage;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +32,7 @@ public class ProjectCalculator extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.activity_project_calculator);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         Button one = (Button) findViewById(R.id.buttonOne);
         one.setOnClickListener(this);
@@ -51,11 +65,23 @@ public class ProjectCalculator extends AppCompatActivity implements View.OnClick
                         .setAction("Action", null).show();
             }
         });
+        result = 0;
+        previousCompute = 0;
+        result = 0;
+
+        additionFlag = false;
+        subtractionFlag = false;
+        divisionFlag = false;
+        multiplicationFlag = false;
+        percentFlag = false;
     }
 
     public void onClick(View v){
 
-        TextView textView = (TextView) findViewById(R.id.textView2);
+        textView = (TextView) findViewById(R.id.textView2);
+
+        double secondInput;
+        double output = 0;
 
         switch(v.getId()){
             case R.id.buttonOne:
@@ -90,6 +116,74 @@ public class ProjectCalculator extends AppCompatActivity implements View.OnClick
                 textView.append("0");
                 break;
 
+            case R.id.buttonAddition:
+                buffer = Double.parseDouble(textView.getText().toString());
+                textView.setText("");
+                additionFlag = true;
+                break;
+            case R.id.buttonSubtraction:
+                buffer = Double.parseDouble(textView.getText().toString());
+                textView.setText("");
+                subtractionFlag = true;
+                break;
+
+            case R.id.buttonDivision:
+                buffer = Double.parseDouble(textView.getText().toString());
+                textView.setText("");
+                divisionFlag = true;
+
+                break;
+            case R.id.buttonMultiplication:
+                buffer = Double.parseDouble(textView.getText().toString());
+                textView.setText("");
+                multiplicationFlag = true;
+                break;
+            case R.id.buttonClear:
+                textView.setText("");
+                buffer = 0.0;
+                previousCompute = 0.0;
+                break;
+            case R.id.buttonConversion:
+                numberConvert = Double.parseDouble(textView.getText().toString());
+                numberConvert *= -1;
+                previousCompute *= -1;
+                textView.setText(Double.toString(numberConvert));
+                break;
+            case R.id.buttonPercentage:
+                percentFlag = true;
+            case R.id.buttonEquals:
+                secondInput = Double.parseDouble(textView.getText().toString());
+                if(additionFlag == true && percentFlag == false){
+                    output = buffer + secondInput;
+                    additionFlag = false;
+                    textView.setText(Double.toString(output));
+                }
+                if(additionFlag == true && percentFlag == true){
+                    percentage = buffer + (buffer * (secondInput/100));
+                    textView.setText(Double.toString(percentage));
+                    percentFlag = false;
+                }
+                if(subtractionFlag == true){
+                    output = buffer - secondInput;
+                    subtractionFlag = false;
+                    textView.setText(Double.toString(output));
+                }
+                if(multiplicationFlag == true){
+                    output = buffer * secondInput;
+                    multiplicationFlag= false;
+                    textView.setText(Double.toString(output));
+                }
+                if(divisionFlag == true){
+                    output = buffer / secondInput;
+                    divisionFlag = false;
+                    textView.setText(Double.toString(output));
+                }/*
+                if(percentFlag == true && additionFlag == true){
+                    percentage = buffer + (buffer * (secondInput/100));
+                    textView.setText(Double.toString(percentage));
+                    percentFlag = false;
+                }  */
+
             default:
                 break;
 
@@ -97,6 +191,7 @@ public class ProjectCalculator extends AppCompatActivity implements View.OnClick
         }
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
