@@ -159,7 +159,7 @@ public class ProjectCalculator extends AppCompatActivity implements View.OnClick
                     textView.setText(Double.toString(output));
                 }
                 if(additionFlag == true && percentFlag == true){
-                    percentage = buffer + (buffer * (secondInput/100));
+                    percentage = buffer + (buffer * secondInput/100);
                     textView.setText(Double.toString(percentage));
                     percentFlag = false;
                 }
