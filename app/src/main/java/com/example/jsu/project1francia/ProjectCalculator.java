@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 public class ProjectCalculator extends AppCompatActivity implements View.OnClickListener{
 
-    double buffer;
+    private double buffer;
     double numberConvert;
     double previousCompute;
     double result;
@@ -79,6 +79,7 @@ public class ProjectCalculator extends AppCompatActivity implements View.OnClick
     public void onClick(View v){
 
         textView = (TextView) findViewById(R.id.textView2);
+        double accumulator = 0;
 
         double secondInput;
         double output = 0;
@@ -115,7 +116,9 @@ public class ProjectCalculator extends AppCompatActivity implements View.OnClick
             case R.id.buttonZero:
                 textView.append("0");
                 break;
-
+            case R.id.buttonPeriod:
+                textView.append(".");
+                break;
             case R.id.buttonAddition:
                 buffer = Double.parseDouble(textView.getText().toString());
                 textView.setText("");
@@ -137,6 +140,11 @@ public class ProjectCalculator extends AppCompatActivity implements View.OnClick
                 buffer = Double.parseDouble(textView.getText().toString());
                 textView.setText("");
                 multiplicationFlag = true;
+                break;
+            case R.id.buttonSquareRoot:
+                buffer = Double.parseDouble(textView.getText().toString());
+                double squareRoot = Math.sqrt(buffer);
+                textView.setText(Double.toString(squareRoot));
                 break;
             case R.id.buttonClear:
                 textView.setText("");
@@ -177,12 +185,7 @@ public class ProjectCalculator extends AppCompatActivity implements View.OnClick
                     output = buffer / secondInput;
                     divisionFlag = false;
                     textView.setText(Double.toString(output));
-                }/*
-                if(percentFlag == true && additionFlag == true){
-                    percentage = buffer + (buffer * (secondInput/100));
-                    textView.setText(Double.toString(percentage));
-                    percentFlag = false;
-                }  */
+                }
 
             default:
                 break;
