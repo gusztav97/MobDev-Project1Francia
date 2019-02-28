@@ -15,9 +15,9 @@ import android.widget.TextView;
 public class ProjectCalculator extends AppCompatActivity implements View.OnClickListener{
 
     private double buffer;
-    double numberConvert;
-    double previousCompute;
-    double result;
+    private double numberConvert;
+    private double previousCompute;
+    private double result;
     boolean additionFlag;
     boolean subtractionFlag;
     boolean divisionFlag;
@@ -25,6 +25,11 @@ public class ProjectCalculator extends AppCompatActivity implements View.OnClick
     boolean percentFlag;
     double percentage;
     TextView textView;
+
+    private double accumulator = 0;
+
+    private double secondInput;
+    private double output = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,15 +79,17 @@ public class ProjectCalculator extends AppCompatActivity implements View.OnClick
         divisionFlag = false;
         multiplicationFlag = false;
         percentFlag = false;
+
+
+        accumulator = 0;
+
+        output = 0;
     }
 
     public void onClick(View v){
 
         textView = (TextView) findViewById(R.id.textView2);
-        double accumulator = 0;
-
-        double secondInput;
-        double output = 0;
+        String displayNumber;
 
         switch(v.getId()){
             case R.id.buttonOne:
@@ -119,13 +126,16 @@ public class ProjectCalculator extends AppCompatActivity implements View.OnClick
             case R.id.buttonPeriod:
                 textView.append(".");
                 break;
+
             case R.id.buttonAddition:
                 buffer = Double.parseDouble(textView.getText().toString());
+                //accumulator += buffer;
                 textView.setText("");
                 additionFlag = true;
                 break;
             case R.id.buttonSubtraction:
                 buffer = Double.parseDouble(textView.getText().toString());
+               // accumulator += buffer;
                 textView.setText("");
                 subtractionFlag = true;
                 break;
@@ -150,6 +160,7 @@ public class ProjectCalculator extends AppCompatActivity implements View.OnClick
                 textView.setText("");
                 buffer = 0.0;
                 previousCompute = 0.0;
+                accumulator = 0;
                 break;
             case R.id.buttonConversion:
                 numberConvert = Double.parseDouble(textView.getText().toString());
@@ -163,6 +174,7 @@ public class ProjectCalculator extends AppCompatActivity implements View.OnClick
                 secondInput = Double.parseDouble(textView.getText().toString());
                 if(additionFlag == true && percentFlag == false){
                     output = buffer + secondInput;
+                    //accumulator += secondInput;
                     additionFlag = false;
                     textView.setText(Double.toString(output));
                 }
@@ -173,6 +185,7 @@ public class ProjectCalculator extends AppCompatActivity implements View.OnClick
                 }
                 if(subtractionFlag == true){
                     output = buffer - secondInput;
+                  //  accumulator -= secondInput;
                     subtractionFlag = false;
                     textView.setText(Double.toString(output));
                 }
