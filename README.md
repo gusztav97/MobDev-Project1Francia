@@ -9,17 +9,23 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+What things you need to install the software and how to install them 
 
 ```
-Give examples
+You will need to install Android Studio application. Android Studio is the official Integrated Development Environment (IDE) for Google. It also contains the Android emulator that is required to test your applications. There are multiple download options that you can choose if you have other requests.
+```
+
+Things you need to know before working on an Android project
+
+```
+You need to have a good understanding of Java programming. You must have a strong grasp of Object Oriented Programming as well. 
 ```
 
 ### Installing
 
 A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
+Download Android Studio from [this website](https://developer.android.com/studio)
 
 ```
 Give the example
