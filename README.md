@@ -23,59 +23,40 @@ You need to have a good understanding of Java programming. You must have a stron
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+A step by step series of examples that tell you how to get a development env running 
 
 Download Android Studio from [this website](https://developer.android.com/studio)
 
-```
-Give the example
-```
+## Creating a Project
 
-And repeat
+1. Create a New Project
 
-```
-until finished
-```
+2. Choose the Basic Activity Option
 
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+3. In the Configure Your Project page, use the defaults except for what is below
 
 ```
-Give an example
+In Minimum API level, uses API 22: Android 5.1 (Lollipop)
 ```
 
-### And coding style tests
+4. Congratulations, you have created your first project (nothing in it yet).
 
-Explain what these tests test and why
+## Running the simulator
 
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+There is a green play button around the top-right toolbar.
+If you click on it, it will start the Google simulation.
+Note: If this is your first time opening the Google simulation, it
+will take more than a minute to open. 
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+* [JAVA](https://www.java.com/en/) - Coding Language used
+* [Android Studio](https://developer.android.com/studio) - IDE used
+* [Github](https://github.com/) - Used for versioning
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [Github](https://github.com/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
