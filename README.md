@@ -9,7 +9,7 @@ These instructions will get you a copy of a basic desktop calculator up and runn
 
 ## Project Description
 
-The pocket calculator has the ability to perform basic arithmetic like addition, subtraction, multiplication, and addition. The project will use the Android Studio Layout Editor and the ConstraintLayout layout manager which will be used to create a simple application that allows and implements the functionality of a basic calculator. The UI will consist of a five by four grid of Buttons, along with a TextView that will be at the top of the simulator. (If you are familiar with Windows Builder in Java, you should have no problem with adjusting to this). The project interface is viewable in both portrait and landscape views. The project will make use of a single onClick() event handler that will consider every button that was pushed. This project was created for Mobile Application Development in Mr. Jay Snellen's class.
+The pocket calculator has the ability to perform basic arithmetic like addition, subtraction, multiplication, and addition. The project will use the Android Studio Layout Editor and the ConstraintLayout layout manager which will be used to create a simple application that allows and implements the functionality of a basic calculator. The user interface will consist of a five by four grid of Buttons, along with a TextView that will be at the top of the simulator. (If you are familiar with Windows Builder in Java, you should have no problem with adjusting to this). The project interface is viewable in both portrait and landscape views. The project will make use of a single onClick() event handler that will consider every button that was pushed. This project was created for Mobile Application Development in Mr. Jay Snellen's class.
 
 This application will contain the following: 
 
@@ -134,4 +134,4 @@ This project is licensed under Google due to the License Agreement which places 
 
 * Mr. Jay Snellen for helping me understand what I was doing wrong and being very patient with me throughout the entire process of working on this project
 * My family for letting me come to the United States of America in hopes for a better future. 
-* etc
+* etc.
